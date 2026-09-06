@@ -1,0 +1,306 @@
+{
+  "generated_at": "2026-09-06T20:53:55.743930",
+  "mode": "live",
+  "collection": "COPERNICUS/S2_SR_HARMONIZED",
+  "bands": [
+    "B2",
+    "B3",
+    "B4",
+    "B8"
+  ],
+  "scale_m": 10,
+  "max_cloud_pct": 20,
+  "date_range": [
+    "2019-01-01",
+    "2024-12-31"
+  ],
+  "zones": {
+    "Chellanam": {
+      "bbox": [
+        76.155,
+        9.78,
+        76.235,
+        9.88
+      ],
+      "state": "Kerala"
+    },
+    "Alappuzha": {
+      "bbox": [
+        76.295,
+        9.46,
+        76.405,
+        9.56
+      ],
+      "state": "Kerala"
+    },
+    "Nagapattinam": {
+      "bbox": [
+        79.82,
+        10.75,
+        79.9,
+        10.85
+      ],
+      "state": "Tamil Nadu"
+    },
+    "Cuddalore": {
+      "bbox": [
+        79.74,
+        11.72,
+        79.82,
+        11.8
+      ],
+      "state": "Tamil Nadu"
+    },
+    "Visakhapatnam": {
+      "bbox": [
+        83.2,
+        17.65,
+        83.35,
+        17.75
+      ],
+      "state": "Andhra Pradesh"
+    }
+  },
+  "results": [
+    {
+      "zone": "Chellanam",
+      "year": 2019,
+      "n_images": 85,
+      "status": "success",
+      "path": "data/sentinel2/Chellanam/2019/chellanam_2019_S2_B2B3B4B8.tif",
+      "size_kb": 5437
+    },
+    {
+      "zone": "Chellanam",
+      "year": 2020,
+      "n_images": 91,
+      "status": "success",
+      "path": "sentinel2/Chellanam/2020/chellanam_2020_S2_B2B3B4B8.tif",
+      "size_kb": 5904
+    },
+    {
+      "zone": "Chellanam",
+      "year": 2021,
+      "n_images": 75,
+      "status": "success",
+      "path": "sentinel2/Chellanam/2021/chellanam_2021_S2_B2B3B4B8.tif",
+      "size_kb": 6484
+    },
+    {
+      "zone": "Chellanam",
+      "year": 2022,
+      "n_images": 61,
+      "status": "success",
+      "path": "sentinel2/Chellanam/2022/chellanam_2022_S2_B2B3B4B8.tif",
+      "size_kb": 6035
+    },
+    {
+      "zone": "Chellanam",
+      "year": 2023,
+      "n_images": 73,
+      "status": "success",
+      "path": "sentinel2/Chellanam/2023/chellanam_2023_S2_B2B3B4B8.tif",
+      "size_kb": 5558
+    },
+    {
+      "zone": "Chellanam",
+      "year": 2024,
+      "n_images": 72,
+      "status": "success",
+      "path": "sentinel2/Chellanam/2024/chellanam_2024_S2_B2B3B4B8.tif",
+      "size_kb": 5757
+    },
+    {
+      "zone": "Alappuzha",
+      "year": 2019,
+      "n_images": 21,
+      "status": "success",
+      "path": "sentinel2/Alappuzha/2019/alappuzha_2019_S2_B2B3B4B8.tif",
+      "size_kb": 9576
+    },
+    {
+      "zone": "Alappuzha",
+      "year": 2020,
+      "n_images": 24,
+      "status": "success",
+      "path": "sentinel2/Alappuzha/2020/alappuzha_2020_S2_B2B3B4B8.tif",
+      "size_kb": 10504
+    },
+    {
+      "zone": "Alappuzha",
+      "year": 2021,
+      "n_images": 17,
+      "status": "success",
+      "path": "sentinel2/Alappuzha/2021/alappuzha_2021_S2_B2B3B4B8.tif",
+      "size_kb": 9512
+    },
+    {
+      "zone": "Alappuzha",
+      "year": 2022,
+      "n_images": 11,
+      "status": "success",
+      "path": "sentinel2/Alappuzha/2022/alappuzha_2022_S2_B2B3B4B8.tif",
+      "size_kb": 9581
+    },
+    {
+      "zone": "Alappuzha",
+      "year": 2023,
+      "n_images": 17,
+      "status": "success",
+      "path": "sentinel2/Alappuzha/2023/alappuzha_2023_S2_B2B3B4B8.tif",
+      "size_kb": 9393
+    },
+    {
+      "zone": "Alappuzha",
+      "year": 2024,
+      "n_images": 19,
+      "status": "success",
+      "path": "sentinel2/Alappuzha/2024/alappuzha_2024_S2_B2B3B4B8.tif",
+      "size_kb": 9463
+    },
+    {
+      "zone": "Nagapattinam",
+      "year": 2019,
+      "n_images": 54,
+      "status": "success",
+      "path": "sentinel2/Nagapattinam/2019/nagapattinam_2019_S2_B2B3B4B8.tif",
+      "size_kb": 7563
+    },
+    {
+      "zone": "Nagapattinam",
+      "year": 2020,
+      "n_images": 49,
+      "status": "success",
+      "path": "sentinel2/Nagapattinam/2020/nagapattinam_2020_S2_B2B3B4B8.tif",
+      "size_kb": 6991
+    },
+    {
+      "zone": "Nagapattinam",
+      "year": 2021,
+      "n_images": 38,
+      "status": "success",
+      "path": "sentinel2/Nagapattinam/2021/nagapattinam_2021_S2_B2B3B4B8.tif",
+      "size_kb": 7524
+    },
+    {
+      "zone": "Nagapattinam",
+      "year": 2022,
+      "n_images": 32,
+      "status": "success",
+      "path": "sentinel2/Nagapattinam/2022/nagapattinam_2022_S2_B2B3B4B8.tif",
+      "size_kb": 7732
+    },
+    {
+      "zone": "Nagapattinam",
+      "year": 2023,
+      "n_images": 29,
+      "status": "success",
+      "path": "sentinel2/Nagapattinam/2023/nagapattinam_2023_S2_B2B3B4B8.tif",
+      "size_kb": 7092
+    },
+    {
+      "zone": "Nagapattinam",
+      "year": 2024,
+      "n_images": 22,
+      "status": "success",
+      "path": "sentinel2/Nagapattinam/2024/nagapattinam_2024_S2_B2B3B4B8.tif",
+      "size_kb": 7760
+    },
+    {
+      "zone": "Cuddalore",
+      "year": 2019,
+      "n_images": 56,
+      "status": "success",
+      "path": "sentinel2/Cuddalore/2019/cuddalore_2019_S2_B2B3B4B8.tif",
+      "size_kb": 6058
+    },
+    {
+      "zone": "Cuddalore",
+      "year": 2020,
+      "n_images": 44,
+      "status": "success",
+      "path": "sentinel2/Cuddalore/2020/cuddalore_2020_S2_B2B3B4B8.tif",
+      "size_kb": 6381
+    },
+    {
+      "zone": "Cuddalore",
+      "year": 2021,
+      "n_images": 42,
+      "status": "success",
+      "path": "sentinel2/Cuddalore/2021/cuddalore_2021_S2_B2B3B4B8.tif",
+      "size_kb": 6111
+    },
+    {
+      "zone": "Cuddalore",
+      "year": 2022,
+      "n_images": 38,
+      "status": "success",
+      "path": "sentinel2/Cuddalore/2022/cuddalore_2022_S2_B2B3B4B8.tif",
+      "size_kb": 6140
+    },
+    {
+      "zone": "Cuddalore",
+      "year": 2023,
+      "n_images": 30,
+      "status": "success",
+      "path": "sentinel2/Cuddalore/2023/cuddalore_2023_S2_B2B3B4B8.tif",
+      "size_kb": 6488
+    },
+    {
+      "zone": "Cuddalore",
+      "year": 2024,
+      "n_images": 24,
+      "status": "success",
+      "path": "sentinel2/Cuddalore/2024/cuddalore_2024_S2_B2B3B4B8.tif",
+      "size_kb": 6504
+    },
+    {
+      "zone": "Visakhapatnam",
+      "year": 2019,
+      "n_images": 76,
+      "status": "url_error",
+      "path": null,
+      "size_kb": 0
+    },
+    {
+      "zone": "Visakhapatnam",
+      "year": 2020,
+      "n_images": 65,
+      "status": "url_error",
+      "path": null,
+      "size_kb": 0
+    },
+    {
+      "zone": "Visakhapatnam",
+      "year": 2021,
+      "n_images": 61,
+      "status": "url_error",
+      "path": null,
+      "size_kb": 0
+    },
+    {
+      "zone": "Visakhapatnam",
+      "year": 2022,
+      "n_images": 55,
+      "status": "url_error",
+      "path": null,
+      "size_kb": 0
+    },
+    {
+      "zone": "Visakhapatnam",
+      "year": 2023,
+      "n_images": 59,
+      "status": "url_error",
+      "path": null,
+      "size_kb": 0
+    },
+    {
+      "zone": "Visakhapatnam",
+      "year": 2024,
+      "n_images": 53,
+      "status": "url_error",
+      "path": null,
+      "size_kb": 0
+    }
+  ]
+}

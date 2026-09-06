@@ -239,29 +239,67 @@ def process_zone_year(ee, zone_name: str, zone: dict, year: int, dry_run: bool) 
     filename = f"{zone_name.lower()}_{year}_S2_B2B3B4B8.tif"
     dest = DATA_DIR / zone_name / str(year) / filename
 
+    # ── Skip if already downloaded ────────────────────────────────────────────
+    if dest.exists() and dest.stat().st_size > 0:
+        size_kb = dest.stat().st_size // 1024
+        log.info("  ↩ Already exists — skipping %s  (%d KB)", dest, size_kb)
+        result["status"]  = "success"
+        result["path"]    = str(dest)
+        result["size_kb"] = size_kb
+        return result
+
     # ── Get download URL ──────────────────────────────────────────────────────
-    try:
-        url = composite.getDownloadURL({
-            "bands":       BANDS,
-            "region":      geometry,
-            "scale":       SCALE,
-            "format":      "GEO_TIFF",
-            "filePerBand": False,
-        })
-    except Exception as exc:
+    # ── Get download URL with adaptive scale fallback ─────────────────────────
+    # GEE getDownloadURL hard limit ≈ 48 MB. Large bboxes at 10m may exceed
+    # it. Retry at 20m then 30m — still valid for coastal index computation.
+    SIZE_LIMIT_SIGNAL = "must be less than or equal to"
+    url = None
+    actual_scale = SCALE
+    for scale_attempt in [SCALE, 20, 30]:
+        try:
+            url = composite.getDownloadURL({
+                "bands":       BANDS,
+                "region":      geometry,
+                "scale":       scale_attempt,
+                "format":      "GEO_TIFF",
+                "filePerBand": False,
+            })
+            actual_scale = scale_attempt
+            if scale_attempt != SCALE:
+                log.warning(
+                    "  ⚠ Using %dm resolution for %s/%d "
+                    "(10m exceeded GEE 48MB size limit)",
+                    scale_attempt, zone_name, year,
+                )
+            break
+        except Exception as exc:
+            err_str = str(exc)
+            if SIZE_LIMIT_SIGNAL in err_str and scale_attempt < 30:
+                log.warning(
+                    "  Size limit at %dm for %s/%d — retrying at %dm",
+                    scale_attempt, zone_name, year, scale_attempt * 2,
+                )
+                continue
+            result["status"] = "url_error"
+            log.error("  getDownloadURL failed %s/%d at %dm: %s",
+                      zone_name, year, scale_attempt, exc)
+            return result
+
+    if url is None:
         result["status"] = "url_error"
-        log.error("  getDownloadURL failed %s/%d: %s", zone_name, year, exc)
+        log.error("  Could not get URL for %s/%d at any scale", zone_name, year)
         return result
 
     # ── Download ──────────────────────────────────────────────────────────────
-    log.info("  Downloading → %s", dest)
+    log.info("  Downloading → %s  (scale=%dm)", dest, actual_scale)
     ok = download_tif(url, dest)
     if ok:
         size_kb = dest.stat().st_size // 1024
         result["status"]  = "success"
         result["path"]    = str(dest.relative_to(DATA_DIR.parent))
         result["size_kb"] = size_kb
-        log.info("  ✓ %s  (%d KB)", dest.relative_to(Path.cwd()), size_kb)
+        result["scale_m"] = actual_scale
+        log.info("  ✓ %s  (%d KB @ %dm)", dest, size_kb, actual_scale)
     else:
         result["status"] = "download_error"
         log.error("  ✗ Download failed: %s / %d", zone_name, year)

@@ -8,9 +8,11 @@ env/
 *.json.key
 *service-account*.json
 
-# Downloaded imagery / large data
-data/
-*.tif
+# Downloaded imagery / large data (keep directory structure via .gitkeep)
+data/**
+!data/
+!data/**/
+!data/**/.gitkeep
 *.tiff
 *.jp2
 *.nc
