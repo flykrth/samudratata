@@ -18,11 +18,18 @@ data/**
 !data/graph_schema.json
 !data/coastal_graph_topology.png
 !data/south_india_coastal_graph.pt
+!data/loss_curve.png
 *.tiff
 *.jp2
 *.nc
 *.h5
 *.hdf5
+*.zip
+
+# Pretrained model weights and checkpoints (exceeds GitHub 100MB limit)
+ChangeFormer/checkpoints/
+ChangeFormer/checkpoints/**
+wandb/
 
 # Python artifacts
 __pycache__/

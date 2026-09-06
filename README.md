@@ -121,6 +121,22 @@ python build_coastal_graph.py
 python visualize_graph.py
 ```
 
+## ChangeFormer Siamese-ViT Coastal Change Detection
+
+Fine-tunes the **ChangeFormerV6** Siamese Vision Transformer architecture for binary coastal change detection (erosion and accretion) using Sentinel-2 bitemporal patch pairs:
+
+- **Transfer Learning**: Pre-trained on LEVIR-CD building change detection.
+- **Selective Fine-Tuning**: Initial Siamese transformer encoder (`Tenc_x2`: 28.9M parameters) is frozen, fine-tuning only the multi-scale MLP decoder head (`TDec_x2`: 12.1M parameters).
+- **Coastal Land/Water Ground Truth**: Binary coastal change masks derived from multi-spectral NDWI transitions ($W_1 \neq W_2$).
+- **Experiment Tracking**: Full validation logging (F1-Score, IoU, Precision, Recall, Accuracy) with Weights & Biases (WandB) and automatic generation of publication-ready `loss_curve.png`.
+
+### Usage
+
+```bash
+# Fine-tune ChangeFormerV6 for 10 epochs
+python train_changeformer_coastal.py --epochs 10 --smoke-test
+```
+
 ## Roadmap
 
 - [x] Virtual environment & library installation
@@ -133,6 +149,7 @@ python visualize_graph.py
 - [x] Unified node latent extraction (`extract_latent_features.py`)
 - [x] PyG Coastal Graph generation with longshore drift topology (`build_coastal_graph.py`)
 - [x] Geographic graph visualization suite (`visualize_graph.py`)
+- [x] ChangeFormer Siamese-ViT coastal fine-tuning & WandB tracking (`train_changeformer_coastal.py`)
 
 ## License
 
