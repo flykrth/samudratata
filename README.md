@@ -45,6 +45,7 @@ samudratatata/
 ├── train_mismatch_autoencoder.py   # Multi-modal training & visual reconstruction check
 ├── extract_latent_features.py      # Unified node embedding extractor (z in R^192)
 ├── verify_ocean_pipeline.py        # Sanity verification for ocean pipelines
+├── train_surge_lstm.py             # Bidirectional LSTM + Multi-Head Attention surge modeling
 ├── requirements.txt                # Pinned Python dependencies
 ├── .env.example                    # Credential template (safe to commit)
 ├── .gitignore                      # Excludes .env, *.tif, .venv, etc.
@@ -137,6 +138,25 @@ Fine-tunes the **ChangeFormerV6** Siamese Vision Transformer architecture for bi
 python train_changeformer_coastal.py --epochs 10 --smoke-test
 ```
 
+## Bidirectional LSTM + Multi-Head Attention Tidal Surge Modeling
+
+Forecasts nearshore tidal and storm surge events using a 72-hour sliding window over 7 INCOIS hydrodynamic and aerodynamic variables:
+
+- **Bidirectional LSTM Backbone**: 2-layer BiLSTM ($h=64$) modeling forward and backward time dynamics across the 72h window ($128$-dimensional temporal representations).
+- **Multi-Head Attention Mechanism**: 4 attention heads query temporal representations, computing consensus attention weights across antecedent hours to isolate critical storm buildup phases.
+- **Huber Loss Optimization**: Robust Huber Loss ($\delta=1.0$) smoothly penalizes extreme cyclonic surge outliers ($H_s > 4.5\text{m}$) without recurrent gradient explosion.
+- **Attention Heatmap Artifact**: Multi-panel visualization (`data/attention_heatmap.png`) mapping per-head attention, cross-temporal self-attention, and physical driver dynamics ($H_s$, $W_{mag}$, Surface Pressure collapse).
+
+### Usage
+
+```bash
+# Train BiLSTM + Multi-Head Attention model (smoke test)
+python train_surge_lstm.py --smoke-test --epochs 2
+
+# Evaluate existing checkpoint and generate Attention Heatmap artifact
+python train_surge_lstm.py --eval-only --smoke-test
+```
+
 ## Roadmap
 
 - [x] Virtual environment & library installation
@@ -150,6 +170,7 @@ python train_changeformer_coastal.py --epochs 10 --smoke-test
 - [x] PyG Coastal Graph generation with longshore drift topology (`build_coastal_graph.py`)
 - [x] Geographic graph visualization suite (`visualize_graph.py`)
 - [x] ChangeFormer Siamese-ViT coastal fine-tuning & WandB tracking (`train_changeformer_coastal.py`)
+- [x] Bidirectional LSTM + Multi-Head Attention tidal surge modeling (`train_surge_lstm.py`)
 
 ## License
 
