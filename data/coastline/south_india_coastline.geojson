@@ -1,0 +1,278 @@
+{
+  "type": "FeatureCollection",
+  "name": "South_India_5Zones_Official_Coastline",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "Chellanam",
+        "state": "Kerala",
+        "coast": "SW",
+        "drift_direction": "South-to-North",
+        "predominant_monsoon": "SW_monsoon",
+        "length_deg": 0.10388323460923507,
+        "start_coord": [
+          76.28119175463905,
+          9.78
+        ],
+        "end_coord": [
+          76.25439603808654,
+          9.88
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            76.28119175463905,
+            9.78
+          ],
+          [
+            76.277354,
+            9.809272
+          ],
+          [
+            76.25439603808654,
+            9.88
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "Alappuzha",
+        "state": "Kerala",
+        "coast": "SW",
+        "drift_direction": "South-to-North",
+        "predominant_monsoon": "SW_monsoon",
+        "length_deg": 0.10223053820079045,
+        "start_coord": [
+          76.32184044446564,
+          9.46
+        ],
+        "end_coord": [
+          76.30186020217091,
+          9.56
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            76.32184044446564,
+            9.46
+          ],
+          [
+            76.311778,
+            9.492987
+          ],
+          [
+            76.30186020217091,
+            9.56
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "Nagapattinam",
+        "state": "Tamil Nadu",
+        "coast": "SE",
+        "drift_direction": "North-to-South",
+        "predominant_monsoon": "NE_monsoon",
+        "length_deg": 0.10010393980219898,
+        "start_coord": [
+          79.84987696222852,
+          10.75
+        ],
+        "end_coord": [
+          79.8454240613866,
+          10.85
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            79.84987696222852,
+            10.75
+          ],
+          [
+            79.849864,
+            10.755194
+          ],
+          [
+            79.847341,
+            10.809638
+          ],
+          [
+            79.8454240613866,
+            10.85
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "Cuddalore",
+        "state": "Tamil Nadu",
+        "coast": "SE",
+        "drift_direction": "North-to-South",
+        "predominant_monsoon": "NE_monsoon",
+        "length_deg": 0.08741811564253675,
+        "start_coord": [
+          79.77621980041029,
+          11.72
+        ],
+        "end_coord": [
+          79.8040427877907,
+          11.8
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            79.77621980041029,
+            11.72
+          ],
+          [
+            79.785899,
+            11.769192
+          ],
+          [
+            79.792735,
+            11.788072
+          ],
+          [
+            79.803233,
+            11.796088
+          ],
+          [
+            79.8040427877907,
+            11.8
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "Visakhapatnam",
+        "state": "Andhra Pradesh",
+        "coast": "SE",
+        "drift_direction": "North-to-South",
+        "predominant_monsoon": "NE_monsoon",
+        "length_deg": 0.2627755145852457,
+        "start_coord": [
+          83.2715262900155,
+          17.65
+        ],
+        "end_coord": [
+          83.36,
+          17.737958155271567
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            83.2715262900155,
+            17.65
+          ],
+          [
+            83.289236,
+            17.65762
+          ],
+          [
+            83.299083,
+            17.664293
+          ],
+          [
+            83.298595,
+            17.672797
+          ],
+          [
+            83.292491,
+            17.677476
+          ],
+          [
+            83.271983,
+            17.688137
+          ],
+          [
+            83.249278,
+            17.69538
+          ],
+          [
+            83.242035,
+            17.706529
+          ],
+          [
+            83.246918,
+            17.716254
+          ],
+          [
+            83.26824,
+            17.717475
+          ],
+          [
+            83.276378,
+            17.71308
+          ],
+          [
+            83.280284,
+            17.705959
+          ],
+          [
+            83.282237,
+            17.699286
+          ],
+          [
+            83.284679,
+            17.696357
+          ],
+          [
+            83.287446,
+            17.69538
+          ],
+          [
+            83.289561,
+            17.693264
+          ],
+          [
+            83.292735,
+            17.691148
+          ],
+          [
+            83.298595,
+            17.690131
+          ],
+          [
+            83.304373,
+            17.692206
+          ],
+          [
+            83.313243,
+            17.701158
+          ],
+          [
+            83.319102,
+            17.703192
+          ],
+          [
+            83.341319,
+            17.717434
+          ],
+          [
+            83.36,
+            17.737958155271567
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -13,6 +13,11 @@ data/**
 !data/
 !data/**/
 !data/**/.gitkeep
+!data/coastline/
+!data/coastline/**
+!data/graph_schema.json
+!data/coastal_graph_topology.png
+!data/south_india_coastal_graph.pt
 *.tiff
 *.jp2
 *.nc

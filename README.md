@@ -96,6 +96,33 @@ See `.env.example` for all available configuration options.
 
 ## Roadmap
 
+## PyTorch Geometric Coastal Graph Dataset
+
+Transforms discretized coastal transects ($100\,\text{m}$ intervals) and multimodal latent representations ($z \in \mathbb{R}^{192}$) into a structured PyG graph dataset:
+
+- **Official Coastline Discretization**: $718$ coastal transects across Chellanam ($115$), Alappuzha ($113$), Nagapattinam ($111$), Cuddalore ($96$), and Visakhapatnam ($283$).
+- **Graph Topology**:
+  - Linear Chain Edges: Bidirectional edges connecting adjacent segments ($i \leftrightarrow i+1$).
+  - Directional Longshore Drift Edges: Asymmetric directed transport edges following seasonal monsoon forcing:
+    - **SW Coast (Chellanam & Alappuzha)**: South-to-North drift during SW Monsoon.
+    - **SE Coast (Nagapattinam, Cuddalore, Visakhapatnam)**: North-to-South drift during NE Monsoon.
+  - Edge Attributes ($E_{\text{attr}} \in \mathbb{R}^{2134 \times 3}$): Euclidean distance ($m$), alongshore bathymetric depth gradient ($\Delta d / \Delta s$), and drift indicator ($\pm 1$).
+- **Node Features ($X \in \mathbb{R}^{718 \times 194}$)**:
+  - Static GIS properties: Elevation ($z_{\text{topo}}$, meters above MSL) and Baseline Distance to Vegetation Line ($d_{\text{veg}}$, meters, from Sentinel-2 NDVI $> 0.3$).
+  - Dynamic Latent Vectors: $z \in \mathbb{R}^{192}$ interpolated from the multimodal autoencoder via spatial inverse distance weighting.
+
+### Usage
+
+```bash
+# Build coastal graph dataset (outputs data/south_india_coastal_graph.pt & graph_schema.json)
+python build_coastal_graph.py
+
+# Visualize topology overlaid on geographic coordinates
+python visualize_graph.py
+```
+
+## Roadmap
+
 - [x] Virtual environment & library installation
 - [x] Credential management (`config_setup.py`)
 - [x] CDSE & GEE authentication smoke-tests
@@ -104,6 +131,8 @@ See `.env.example` for all available configuration options.
 - [x] Dual-Branch Latent Autoencoder architecture & SSIM loss (`model_mismatch_autoencoder.py`)
 - [x] Multimodal mismatch training pipeline (`train_mismatch_autoencoder.py`)
 - [x] Unified node latent extraction (`extract_latent_features.py`)
+- [x] PyG Coastal Graph generation with longshore drift topology (`build_coastal_graph.py`)
+- [x] Geographic graph visualization suite (`visualize_graph.py`)
 
 ## License
 

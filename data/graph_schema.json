@@ -1,0 +1,121 @@
+{
+  "graph_name": "south_india_coastal_graph",
+  "framework": "torch_geometric.data.Data",
+  "num_nodes": 718,
+  "num_edges": 2134,
+  "edge_sparsity": 0.9958547491676476,
+  "node_degree_distribution": {
+    "min_total_degree": 3,
+    "max_total_degree": 6,
+    "mean_total_degree": 5.944289684295654,
+    "median_total_degree": 6.0,
+    "mean_out_degree": 2.972144842147827,
+    "mean_in_degree": 2.972144842147827,
+    "histogram": {
+      "3": 10,
+      "5": 10,
+      "6": 698
+    }
+  },
+  "feature_matrix_dimensions": {
+    "num_nodes": 718,
+    "total_feature_dim": 194,
+    "static_gis_dim": 2,
+    "dynamic_latent_dim": 192,
+    "static_features": [
+      "elevation_m",
+      "baseline_dist_veg_m"
+    ],
+    "dynamic_latent_breakdown": {
+      "spatial_latent_dim": 128,
+      "temporal_latent_dim": 64,
+      "unified_latent_dim": 192
+    }
+  },
+  "edge_attributes": {
+    "num_edges": 2134,
+    "edge_attr_dim": 3,
+    "attributes": [
+      "euclidean_distance_m",
+      "bathymetric_depth_gradient",
+      "seasonal_drift_direction_indicator"
+    ],
+    "distance_summary": {
+      "min_m": 91.33008575439453,
+      "max_m": 201.6674041748047,
+      "mean_m": 133.0375518798828
+    },
+    "bathymetric_gradient_summary": {
+      "min": -0.008284526877105236,
+      "max": 0.008284526877105236,
+      "mean": -5.4969495977275074e-05
+    }
+  },
+  "zone_breakdown": {
+    "Chellanam": {
+      "zone_idx": 0,
+      "coast": "SW",
+      "drift_direction": "South-to-North",
+      "coastline_length_m": 11483.263726326411,
+      "num_nodes": 115,
+      "num_edges": 341,
+      "node_offset_start": 0,
+      "node_offset_end": 114,
+      "mean_elevation_m": 1.6010433435440063,
+      "mean_veg_dist_m": 25.0,
+      "mean_bathymetric_depth_m": 5.662590026855469
+    },
+    "Alappuzha": {
+      "zone_idx": 1,
+      "coast": "SW",
+      "drift_direction": "South-to-North",
+      "coastline_length_m": 11303.67070929981,
+      "num_nodes": 113,
+      "num_edges": 335,
+      "node_offset_start": 115,
+      "node_offset_end": 227,
+      "mean_elevation_m": 2.2015929222106934,
+      "mean_veg_dist_m": 469.5882568359375,
+      "mean_bathymetric_depth_m": 5.10330057144165
+    },
+    "Nagapattinam": {
+      "zone_idx": 2,
+      "coast": "SE",
+      "drift_direction": "North-to-South",
+      "coastline_length_m": 11072.565434463397,
+      "num_nodes": 111,
+      "num_edges": 329,
+      "node_offset_start": 228,
+      "node_offset_end": 338,
+      "mean_elevation_m": 2.0013511180877686,
+      "mean_veg_dist_m": 27.07600975036621,
+      "mean_bathymetric_depth_m": 5.378073215484619
+    },
+    "Cuddalore": {
+      "zone_idx": 3,
+      "coast": "SE",
+      "drift_direction": "North-to-South",
+      "coastline_length_m": 9649.5886894858,
+      "num_nodes": 96,
+      "num_edges": 284,
+      "node_offset_start": 339,
+      "node_offset_end": 434,
+      "mean_elevation_m": 2.4021875858306885,
+      "mean_veg_dist_m": 69.5420150756836,
+      "mean_bathymetric_depth_m": 6.577242374420166
+    },
+    "Visakhapatnam": {
+      "zone_idx": 4,
+      "coast": "SE",
+      "drift_direction": "North-to-South",
+      "coastline_length_m": 28312.51863166464,
+      "num_nodes": 283,
+      "num_edges": 845,
+      "node_offset_start": 435,
+      "node_offset_end": 717,
+      "mean_elevation_m": 4.505924224853516,
+      "mean_veg_dist_m": 313.4649353027344,
+      "mean_bathymetric_depth_m": 12.519843101501465
+    }
+  }
+}
