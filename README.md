@@ -157,6 +157,22 @@ python train_surge_lstm.py --smoke-test --epochs 2
 python train_surge_lstm.py --eval-only --smoke-test
 ```
 
+## Coastal Digital Twin Spatio-Temporal GNN (GConvLSTM)
+
+Fuses multimodal image representations from the validated **ChangeFormer Siamese-ViT** ($z_{\text{spatial}} \in \mathbb{R}^{128}$) and oceanographic signal representations from the **Bi-LSTM + Multi-Head Attention** surge model ($z_{\text{temporal}} \in \mathbb{R}^{64}$) onto the South India Coastal Graph ($N=718$ transects, $E=2134$ edges across 5 study zones):
+
+- **Spatio-Temporal GConvLSTM Core**: Recurrent Chebyshev polynomial graph convolutions ($K=3$) executing spatial message passing along bidirectional $100\text{m}$ linear chains and seasonal longshore drift transport edges.
+- **Recurrent Temporal Hidden Updates**: Propagates hidden states across multi-year observation sequences ($T=6$ years: 2019–2024), capturing antecedent storm impact, coastal erosion, and sediment transport dynamics.
+- **Localized Vulnerability Projection**: Non-linear projection head with Sigmoid activation mapping node representations into a continuous Coastal Vulnerability Score ($V \in [0.0, 1.0]$) for each 100m coastal segment.
+- **Geographic Vulnerability Map**: Multi-panel publication-grade artifact (`data/vulnerability_map.png`) projecting test set predictions onto the South India coordinate plane, with zone-by-zone micro-scale transects and risk band profiles.
+
+### Usage
+
+```bash
+# Train Coastal Digital Twin GConvLSTM and generate Vulnerability Map artifact
+python train_digital_twin_gnn.py --epochs 35
+```
+
 ## Roadmap
 
 - [x] Virtual environment & library installation
@@ -171,6 +187,7 @@ python train_surge_lstm.py --eval-only --smoke-test
 - [x] Geographic graph visualization suite (`visualize_graph.py`)
 - [x] ChangeFormer Siamese-ViT coastal fine-tuning & WandB tracking (`train_changeformer_coastal.py`)
 - [x] Bidirectional LSTM + Multi-Head Attention tidal surge modeling (`train_surge_lstm.py`)
+- [x] Coastal Digital Twin Spatio-Temporal GNN (GConvLSTM) & Vulnerability Mapping (`train_digital_twin_gnn.py`)
 
 ## License
 

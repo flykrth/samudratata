@@ -17,6 +17,8 @@ data/**
 !data/coastline/**
 !data/graph_schema.json
 !data/coastal_graph_topology.png
+!data/vulnerability_map.png
+!data/digital_twin_gnn_summary.json
 !data/south_india_coastal_graph.pt
 !data/loss_curve.png
 *.tiff

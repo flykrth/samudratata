@@ -1,0 +1,69 @@
+{
+  "model_architecture": "GConvLSTM (Chebyshev Polynomial Spatio-Temporal Recurrent GNN)",
+  "input_features": "ChangeFormer ViT (128) + Bi-LSTM Surge (64) Latents",
+  "num_nodes": 718,
+  "num_edges": 2134,
+  "temporal_steps": 6,
+  "metrics": {
+    "test_nodes": 109,
+    "test_mse": 0.013780411332845688,
+    "test_rmse": 0.11738999673245454,
+    "test_mae": 0.0862751379609108,
+    "test_r2": 0.719419002532959,
+    "test_pearson_r": 0.8490539192214482,
+    "high_risk_precision": 0.8235293875432533,
+    "high_risk_recall": 0.7777777561728402,
+    "high_risk_f1": 0.7999994775513332,
+    "best_val_loss": 0.0732090026140213,
+    "best_epoch": 28,
+    "total_epochs": 35,
+    "training_time_seconds": 30.08849000930786
+  },
+  "zone_breakdown": {
+    "Chellanam": {
+      "num_nodes": 115,
+      "mean_predicted_vulnerability": 0.7205688953399658,
+      "std_predicted_vulnerability": 0.010707516223192215,
+      "min_predicted_vulnerability": 0.639013409614563,
+      "max_predicted_vulnerability": 0.7223780751228333,
+      "mean_ground_truth_vulnerability": 0.7123839855194092,
+      "risk_classification": "High (Severe Sea Wall Breach & Chronic Inundation)"
+    },
+    "Alappuzha": {
+      "num_nodes": 113,
+      "mean_predicted_vulnerability": 0.35502198338508606,
+      "std_predicted_vulnerability": 0.042121440172195435,
+      "min_predicted_vulnerability": 0.30805090069770813,
+      "max_predicted_vulnerability": 0.5198289155960083,
+      "mean_ground_truth_vulnerability": 0.40193700790405273,
+      "risk_classification": "Moderate (Mudbank Dynamics & Agricultural Barrier)"
+    },
+    "Nagapattinam": {
+      "num_nodes": 111,
+      "mean_predicted_vulnerability": 0.7384877800941467,
+      "std_predicted_vulnerability": 0.030793309211730957,
+      "min_predicted_vulnerability": 0.6541966199874878,
+      "max_predicted_vulnerability": 0.7879503965377808,
+      "mean_ground_truth_vulnerability": 0.7383889555931091,
+      "risk_classification": "High (Deltaic Lowland & Cyclonic Surge Influx)"
+    },
+    "Cuddalore": {
+      "num_nodes": 96,
+      "mean_predicted_vulnerability": 0.4761721193790436,
+      "std_predicted_vulnerability": 0.10880880057811737,
+      "min_predicted_vulnerability": 0.2844957411289215,
+      "max_predicted_vulnerability": 0.6390374898910522,
+      "mean_ground_truth_vulnerability": 0.6799752712249756,
+      "risk_classification": "Moderate-High (Estuarine Inundation Zone)"
+    },
+    "Visakhapatnam": {
+      "num_nodes": 283,
+      "mean_predicted_vulnerability": 0.3222416341304779,
+      "std_predicted_vulnerability": 0.07165192067623138,
+      "min_predicted_vulnerability": 0.24532173573970795,
+      "max_predicted_vulnerability": 0.5798392295837402,
+      "mean_ground_truth_vulnerability": 0.24804317951202393,
+      "risk_classification": "Low-Moderate (Rocky Headlands & Escarpment Buffer)"
+    }
+  }
+}
