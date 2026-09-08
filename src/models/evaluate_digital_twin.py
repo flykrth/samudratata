@@ -54,8 +54,8 @@ from torch_geometric.data import Data
 from torch_geometric.nn import GCNConv
 from torch_geometric_temporal.nn.recurrent import GConvLSTM
 
-from build_coastal_graph import load_and_interpolate_latent_features
-from train_digital_twin_gnn import (
+from src.preprocessing.build_coastal_graph import load_and_interpolate_latent_features
+from src.models.train_digital_twin_gnn import (
     CoastalGConvLSTM,
     compute_ground_truth_vulnerability,
     create_stratified_split_masks,
@@ -75,7 +75,7 @@ log = logging.getLogger("DigitalTwinEval")
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_GRAPH_PT = BASE_DIR / "data" / "south_india_coastal_graph.pt"
 DEFAULT_LATENTS_PT = BASE_DIR / "data" / "latent_embeddings.pt"
 DEFAULT_CHANGEFORMER_DIR = BASE_DIR / "data" / "changeformer_dataset"

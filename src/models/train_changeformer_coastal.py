@@ -42,7 +42,7 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 
 # Add ChangeFormer submodule to Python path
-REPO_ROOT = Path(__file__).resolve().parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 CHANGEFORMER_DIR = REPO_ROOT / "ChangeFormer"
 if str(CHANGEFORMER_DIR) not in sys.path:
     sys.path.insert(0, str(CHANGEFORMER_DIR))

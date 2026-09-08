@@ -45,7 +45,7 @@ from tqdm import tqdm
 warnings.filterwarnings("ignore", category=rasterio.errors.NotGeoreferencedWarning)
 
 # Default configuration constants
-BASE_DIR      = Path(__file__).resolve().parent
+BASE_DIR      = Path(__file__).resolve().parent.parent.parent
 SENTINEL_DIR  = BASE_DIR / "data" / "sentinel2"
 MANIFEST_PATH = SENTINEL_DIR / "download_manifest.json"
 OUTPUT_DIR    = BASE_DIR / "data" / "changeformer_dataset"

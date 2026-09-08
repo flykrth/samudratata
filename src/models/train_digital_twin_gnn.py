@@ -47,7 +47,7 @@ import torch.nn.functional as F
 from torch_geometric.data import Data
 from torch_geometric_temporal.nn.recurrent import GConvLSTM
 
-from build_coastal_graph import load_and_interpolate_latent_features
+from src.preprocessing.build_coastal_graph import load_and_interpolate_latent_features
 
 # ---------------------------------------------------------------------------
 # Logging Configuration
@@ -60,7 +60,7 @@ logging.basicConfig(
 log = logging.getLogger("DigitalTwinGNN")
 
 # Default paths
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_GRAPH_PT = BASE_DIR / "data" / "south_india_coastal_graph.pt"
 DEFAULT_LATENTS_PT = BASE_DIR / "data" / "latent_embeddings.pt"
 DEFAULT_CHANGEFORMER_DIR = BASE_DIR / "data" / "changeformer_dataset"

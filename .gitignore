@@ -1,14 +1,18 @@
-# Virtual environment
+# =============================================================================
+# samudratata — .gitignore
+# =============================================================================
+
+# ── Virtual environment ──────────────────────────────────────────────────────
 .venv/
 venv/
 env/
 
-# Credentials – NEVER commit these
+# ── Credentials – NEVER commit these ────────────────────────────────────────
 .env
 *.json.key
 *service-account*.json
 
-# Downloaded imagery / large data (keep directory structure via .gitkeep)
+# ── Large data files (keep directory scaffolds via .gitkeep) ─────────────────
 data/**
 !data/
 !data/**/
@@ -16,11 +20,15 @@ data/**
 !data/coastline/
 !data/coastline/**
 !data/graph_schema.json
+!data/dataset_card.md
 !data/coastal_graph_topology.png
 !data/vulnerability_map.png
 !data/digital_twin_gnn_summary.json
 !data/south_india_coastal_graph.pt
 !data/loss_curve.png
+
+# Raw raster / netCDF / archive formats
+*.tif
 *.tiff
 *.jp2
 *.nc
@@ -28,12 +36,29 @@ data/**
 *.hdf5
 *.zip
 
-# Pretrained model weights and checkpoints (exceeds GitHub 100MB limit)
+# ── Model weights ────────────────────────────────────────────────────────────
+# Small checkpoints (< 100 MB) ARE tracked under weights/
+weights/**
+!weights/
+!weights/.gitkeep
+!weights/digital_twin_gnn_best.pt
+!weights/surge_lstm_best.pt
+
+# Large checkpoints that exceed GitHub 100 MB limit — distribute via Releases
+data/autoencoder_best.pt
+data/changeformer_coastal_best.pt
+data/latent_embeddings.pt
+data/latent_embeddings.h5
+data/autoencoder_best.pt
+
+# ── ChangeFormer submodule checkpoints ───────────────────────────────────────
 ChangeFormer/checkpoints/
 ChangeFormer/checkpoints/**
+
+# ── Experiment tracking ──────────────────────────────────────────────────────
 wandb/
 
-# Python artifacts
+# ── Python artifacts ─────────────────────────────────────────────────────────
 __pycache__/
 *.pyc
 *.pyo
@@ -44,11 +69,10 @@ dist/
 build/
 .eggs/
 
-# Jupyter
+# ── Jupyter ──────────────────────────────────────────────────────────────────
 .ipynb_checkpoints/
-*.ipynb
 
-# IDE
+# ── IDE ──────────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp

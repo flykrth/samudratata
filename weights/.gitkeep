@@ -1,0 +1,9 @@
+# Pre-trained model weights shipped with this repository.
+#
+# Files tracked here (under GitHub 100 MB limit):
+#   - digital_twin_gnn_best.pt  (~0.8 MB)  GConvLSTM Coastal Digital Twin
+#   - surge_lstm_best.pt        (~3.8 MB)  BiLSTM + Multi-Head Attention Surge Model
+#
+# Large checkpoints NOT tracked (use GitHub Releases or Hugging Face Hub):
+#   - autoencoder_best.pt           (~211 MB)  Dual-Branch Latent Autoencoder
+#   - changeformer_coastal_best.pt  (~249 MB)  ChangeFormerV6 Coastal Fine-tune

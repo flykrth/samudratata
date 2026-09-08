@@ -28,8 +28,8 @@ import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from model_mismatch_autoencoder import DualBranchAutoencoder
-from train_mismatch_autoencoder import (
+from src.models.model_mismatch_autoencoder import DualBranchAutoencoder
+from src.models.train_mismatch_autoencoder import (
     DEFAULT_OCEAN_H5,
     DEFAULT_SPATIAL_H5,
     MultiModalMismatchDataset,

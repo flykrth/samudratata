@@ -43,7 +43,7 @@ logging.basicConfig(
 )
 log = logging.getLogger("VisualizeCoastalGraph")
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_GRAPH_PT = BASE_DIR / "data" / "south_india_coastal_graph.pt"
 DEFAULT_COASTLINE_GEOJSON = BASE_DIR / "data" / "coastline" / "south_india_coastline.geojson"
 DEFAULT_OUTPUT_PNG = BASE_DIR / "data" / "coastal_graph_topology.png"

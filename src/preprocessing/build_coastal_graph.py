@@ -65,7 +65,7 @@ logging.basicConfig(
 log = logging.getLogger("BuildCoastalGraph")
 
 # Default file paths
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_COASTLINE_GEOJSON = BASE_DIR / "data" / "coastline" / "south_india_coastline.geojson"
 DEFAULT_LATENTS_PT = BASE_DIR / "data" / "latent_embeddings.pt"
 DEFAULT_SENTINEL_DIR = BASE_DIR / "data" / "sentinel2"
