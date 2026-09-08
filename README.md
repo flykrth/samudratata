@@ -5,6 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange.svg)](https://pytorch.org/)
 [![torch_geometric](https://img.shields.io/badge/PyG-2.5%2B-green.svg)](https://pyg.org/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/flykrth/samudratata/blob/main/notebooks/main.ipynb)
 [![Release](https://img.shields.io/badge/Release-v1.0.0--Digital--Twin-blue.svg)](https://github.com/flykrth/samudratata/releases/tag/v1.0.0-Digital-Twin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -12,6 +13,19 @@ A multimodal deep-learning pipeline for coastal vulnerability assessment along t
 coastline. Fuses **Sentinel-2 multispectral imagery** and **ERA5 oceanographic time-series**
 (2019–2024) through a cascade of four models to produce per-transect Coastal Vulnerability
 Scores at 100 m resolution across 5 study zones.
+
+---
+
+## 🚀 One-Click Interactive Evaluation (Google Colab)
+
+TAs and evaluators can run the entire inference pipeline in the browser with **zero local setup**:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/flykrth/samudratata/blob/main/notebooks/main.ipynb)
+
+The [`main.ipynb`](notebooks/main.ipynb) notebook:
+- Automatically downloads release assets directly from GitHub Releases (`v1.0.0-Digital-Twin`).
+- Executes a single forward pass of the **GConvLSTM Digital Twin** to generate the **Coastal Vulnerability Map**.
+- Executes a single forward pass of the **Surge BiLSTM + Attention** model to generate the **Attention Heatmap**.
 
 ---
 
