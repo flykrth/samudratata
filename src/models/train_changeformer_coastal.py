@@ -648,7 +648,11 @@ def main():
 
     # ── GENERATE LOSS CURVE ARTIFACT ────────────────────────────────────────
     loss_curve_dest = REPO_ROOT / "loss_curve.png"
-    artifact_brain_dir = Path("/home/flykrth/.gemini/antigravity/brain/65d65df2-7183-4836-b22d-ae8420411e36")
+    artifact_brain_dir = (
+        Path(os.environ["ANTIGRAVITY_ARTIFACT_DIR"])
+        if "ANTIGRAVITY_ARTIFACT_DIR" in os.environ
+        else None
+    )
     generate_loss_curve(history, loss_curve_dest, artifact_brain_dir)
     
     # Also save in data/

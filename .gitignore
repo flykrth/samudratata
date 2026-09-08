@@ -76,3 +76,13 @@ build/
 .vscode/
 .idea/
 *.swp
+
+# ── LaTeX auxiliary files ───────────────────────────────────────────────────
+*.aux
+*.log
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.out

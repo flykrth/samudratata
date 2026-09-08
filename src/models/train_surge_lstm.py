@@ -745,10 +745,16 @@ def run_pipeline(args: argparse.Namespace):
 
     checkpoint_path = output_dir / args.checkpoint
     heatmap_path = output_dir / args.heatmap_name
-    brain_artifact_dir = Path(
-        "/home/flykrth/.gemini/antigravity/brain/818589c6-74c3-4186-aa4b-ec762a058bc3"
+    brain_artifact_dir = (
+        Path(os.environ["ANTIGRAVITY_ARTIFACT_DIR"])
+        if "ANTIGRAVITY_ARTIFACT_DIR" in os.environ
+        else None
     )
-    brain_heatmap_path = brain_artifact_dir / "attention_heatmap.png"
+    brain_heatmap_path = (
+        brain_artifact_dir / "attention_heatmap.png"
+        if brain_artifact_dir
+        else None
+    )
 
     device = torch.device(args.device if args.device else ("cuda" if torch.cuda.is_available() else "cpu"))
     log.info("Using compute device: %s", device)

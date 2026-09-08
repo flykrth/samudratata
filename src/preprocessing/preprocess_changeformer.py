@@ -495,12 +495,19 @@ def main():
 
             # Save per-pair .pt
             zone_out = args.output_dir / zone
+            try:
+                t1_rel = "./" + str(Path(pair["t1_path"]).resolve().relative_to(BASE_DIR.resolve()))
+                t2_rel = "./" + str(Path(pair["t2_path"]).resolve().relative_to(BASE_DIR.resolve()))
+            except ValueError:
+                t1_rel = str(pair["t1_path"])
+                t2_rel = str(pair["t2_path"])
+
             meta = {
                 "zone":         zone,
                 "t1_year":      t1_year,
                 "t2_year":      t2_year,
-                "t1_path":      str(pair["t1_path"]),
-                "t2_path":      str(pair["t2_path"]),
+                "t1_path":      t1_rel,
+                "t2_path":      t2_rel,
                 "patch_count":  int(patches_t1.shape[0]),
                 "patch_size":   args.patch_size,
                 "stride":       args.stride,
