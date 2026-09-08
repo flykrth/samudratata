@@ -5,12 +5,65 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange.svg)](https://pytorch.org/)
 [![torch_geometric](https://img.shields.io/badge/PyG-2.5%2B-green.svg)](https://pyg.org/)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--Digital--Twin-blue.svg)](https://github.com/flykrth/samudratata/releases/tag/v1.0.0-Digital-Twin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A multimodal deep-learning pipeline for coastal vulnerability assessment along the South Indian
 coastline. Fuses **Sentinel-2 multispectral imagery** and **ERA5 oceanographic time-series**
 (2019–2024) through a cascade of four models to produce per-transect Coastal Vulnerability
 Scores at 100 m resolution across 5 study zones.
+
+---
+
+## ⚡ Instant Asset Download (For Evaluators & TAs)
+
+Download the finalized graph dataset, oceanographic time-series, and pre-trained model weights directly into your local repository clone using **`wget`** or **`curl`** from the [v1.0.0-Digital-Twin Release](https://github.com/flykrth/samudratata/releases/tag/v1.0.0-Digital-Twin):
+
+### 📥 Option A: Download via `wget`
+```bash
+# 1. Ensure target directories exist
+mkdir -p data/ocean weights
+
+# 2. Download South India Coastal Graph Dataset (PyTorch Geometric, 718 nodes, 2134 edges)
+wget -O data/south_india_coastal_graph.pt \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/south_india_coastal_graph.pt
+
+# 3. Download Ocean Reanalysis Time-Series Dataset (72h sliding window, ERA5/INCOIS)
+wget -O data/ocean/ocean_timeseries_72h.h5 \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/ocean_timeseries_72h.h5
+
+# 4. Download Best-Trained GConvLSTM Digital Twin Weights
+wget -O weights/gconvlstm_best.pt \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/gconvlstm_best.pt
+cp weights/gconvlstm_best.pt weights/digital_twin_gnn_best.pt
+
+# 5. (Optional) Download Tidal Surge BiLSTM Model Weights
+wget -O weights/surge_lstm_best.pt \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/surge_lstm_best.pt
+```
+
+### 📥 Option B: Download via `curl`
+```bash
+# 1. Ensure target directories exist
+mkdir -p data/ocean weights
+
+# 2. Download South India Coastal Graph Dataset (PyTorch Geometric, 718 nodes, 2134 edges)
+curl -L -o data/south_india_coastal_graph.pt \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/south_india_coastal_graph.pt
+
+# 3. Download Ocean Reanalysis Time-Series Dataset (72h sliding window, ERA5/INCOIS)
+curl -L -o data/ocean/ocean_timeseries_72h.h5 \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/ocean_timeseries_72h.h5
+
+# 4. Download Best-Trained GConvLSTM Digital Twin Model Weights
+curl -L -o weights/gconvlstm_best.pt \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/gconvlstm_best.pt
+cp weights/gconvlstm_best.pt weights/digital_twin_gnn_best.pt
+
+# 5. (Optional) Download Tidal Surge BiLSTM Model Weights
+curl -L -o weights/surge_lstm_best.pt \
+  https://github.com/flykrth/samudratata/releases/download/v1.0.0-Digital-Twin/surge_lstm_best.pt
+```
 
 ---
 
